@@ -1,0 +1,330 @@
+#, fuzzy
+msgid ""
+msgstr ""
+"Project-Id-Version: \n"
+"POT-Creation-Date: 2017-03-01 21:33+0330\n"
+"PO-Revision-Date: 2015-12-31 21:18+0330\n"
+"Last-Translator: \n"
+"Language-Team: \n"
+"Language: fa_IR\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: Poedit 1.8.7.1\n"
+"X-Poedit-Basepath: ..\n"
+"Plural-Forms: nplurals=1; plural=0;\n"
+"X-Poedit-KeywordsList: _e;__\n"
+"X-Poedit-SearchPath-0: .\n"
+"X-Poedit-SearchPathExcluded-0: assets\n"
+
+#: includes/partials/gravityforms_callback.php:5
+msgid "E-mail"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:6
+msgid "Name"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:7
+msgid "Last Name"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:8
+msgid "Company"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:9
+msgid "Country"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:10
+msgid "City"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:11
+msgid "Phone"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:12
+msgid "State"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:13
+msgid "ZIP"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:17
+msgid "You have not any form yet! Pleade creat it first."
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:39
+#: includes/partials/products-option-page.php:119
+#: includes/partials/sync-option-page.php:37 includes/wpmi-admin.class.php:122
+#: includes/wpmi-widget.class.php:130
+msgid "User"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:50
+msgid "Mailerlite Field"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:51
+msgid "Form Field"
+msgstr ""
+
+#: includes/partials/gravityforms_callback.php:60
+msgid "Select a field"
+msgstr ""
+
+#: includes/partials/products-option-page.php:12
+msgid "Products Has Been Saved."
+msgstr ""
+
+#: includes/partials/products-option-page.php:52
+msgid "Search"
+msgstr ""
+
+#: includes/partials/products-option-page.php:61
+msgid "Item"
+msgstr ""
+
+#: includes/partials/products-option-page.php:69
+msgid "First Page"
+msgstr ""
+
+#: includes/partials/products-option-page.php:70
+msgid "Previous Page"
+msgstr ""
+
+#: includes/partials/products-option-page.php:74
+msgid "Current Page"
+msgstr ""
+
+#: includes/partials/products-option-page.php:75
+msgid "From"
+msgstr ""
+
+#: includes/partials/products-option-page.php:82
+msgid "Next Page"
+msgstr ""
+
+#: includes/partials/products-option-page.php:83
+msgid "Last Page"
+msgstr ""
+
+#: includes/partials/products-option-page.php:131
+#: includes/partials/products-option-page.php:137
+msgid "Product"
+msgstr ""
+
+#: includes/partials/products-option-page.php:132
+#: includes/partials/products-option-page.php:138
+#: includes/partials/sync-option-page.php:29
+msgid "Group"
+msgstr ""
+
+#: includes/partials/sync-option-page.php:1
+msgid "From this section you can sync old users to mailerlite. if you have a lot of users, it may be too long."
+msgstr ""
+
+#: includes/partials/sync-option-page.php:6
+msgid "Please select your action:"
+msgstr ""
+
+#: includes/partials/sync-option-page.php:9
+msgid "Select Users"
+msgstr ""
+
+#: includes/partials/sync-option-page.php:11
+msgid "Select Role"
+msgstr ""
+
+#: includes/partials/sync-option-page.php:15
+msgid "User ID"
+msgstr ""
+
+#: includes/partials/sync-option-page.php:21
+msgid "User Role"
+msgstr ""
+
+#: includes/partials/sync-option-page.php:46
+msgid "Synchronize"
+msgstr ""
+
+#: includes/wpmi-actions.class.php:419
+msgid "Please select a group."
+msgstr ""
+
+#: includes/wpmi-actions.class.php:435
+msgid "Action type is not valid."
+msgstr ""
+
+#: includes/wpmi-actions.class.php:462
+msgid "Error"
+msgstr ""
+
+#: includes/wpmi-actions.class.php:463
+msgid "Imported"
+msgstr ""
+
+#: includes/wpmi-actions.class.php:464
+msgid "Updated"
+msgstr ""
+
+#: includes/wpmi-actions.class.php:465
+msgid "Unchanged"
+msgstr ""
+
+#: includes/wpmi-actions.class.php:466
+msgid "Errors"
+msgstr ""
+
+#: includes/wpmi-actions.class.php:471
+#, php-format
+msgid "Stats of Group %s:"
+msgstr ""
+
+#: includes/wpmi-actions.class.php:485
+msgid "No user found."
+msgstr ""
+
+#: includes/wpmi-admin.class.php:21
+msgid "Select your groups"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:22
+msgid "Enter user email or id"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:23
+msgid "Something goes wrong. please try again"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:31 includes/wpmi-admin.class.php:32
+msgid "WP Mailerlite"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:51
+msgid "WP Mailerlite Integration"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:57 includes/wpmi-admin.class.php:81
+msgid "General Settings"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:89
+msgid "Mailelite API Key"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:96
+msgid "Register Users Groups"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:106
+#, php-format
+msgid "You can get it from <a href=\"%s\" target=\"_blank\">Here</a>"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:119
+msgid "Select groups"
+msgstr ""
+
+#: includes/wpmi-admin.class.php:127
+msgid "Please insert your api key first."
+msgstr ""
+
+#: includes/wpmi-admin.class.php:135
+msgid "Settings"
+msgstr ""
+
+#: includes/wpmi-public.class.php:33
+msgid "Please insert your email address"
+msgstr ""
+
+#: includes/wpmi-public.class.php:50
+msgid "Something goes wrong"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:7
+msgid "Mailerlite Widget"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:8
+msgid "Displays mailerlite subscription form"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:28
+msgid "Your email is invalid"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:28
+msgid "Oops! Something went wrong. Please try again later."
+msgstr ""
+
+#: includes/wpmi-widget.class.php:30 includes/wpmi-widget.class.php:91
+msgid "Your Email Address:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:31
+msgid "email@email.com"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:46
+msgid "Thank You! Your Email successfully added to our newletter"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:66
+msgid "Subscription Form"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:81
+msgid "Subscribe"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:101
+msgid "Your Name:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:111
+msgid "Your Mobile:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:115
+msgid "Title:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:119
+msgid "Before form text:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:123
+msgid "Subscribtion Group:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:137
+msgid "Button Text:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:141
+msgid "Button class:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:145
+msgid "Email field label:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:150
+msgid "Show name field"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:153
+msgid "Name field label:"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:158
+msgid "Show mobile field"
+msgstr ""
+
+#: includes/wpmi-widget.class.php:161
+msgid "Mobile field label:"
+msgstr ""
