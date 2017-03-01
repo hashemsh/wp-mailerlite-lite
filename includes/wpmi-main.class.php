@@ -2,7 +2,7 @@
 class WP_Mailerlite
 {
     private static $plugin_name = 'wp-mailerlite-lite';
-    private static $version = '1.0.0';
+    private static $version = '1.0.1';
 
     public function __construct()
     {

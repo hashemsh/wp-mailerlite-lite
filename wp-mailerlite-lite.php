@@ -3,7 +3,7 @@
 Plugin Name: Wordpress Mailerlite Integration Lite
 Plugin URI: https://wordpress.org/plugins/wp-mailerlite-lite/
 Description: With this plugin you can integrate your website users with mailerlite email marketing software
-Version: 1.0.0
+Version: 1.0.1
 Author: Mojtaba Darvishi
 Author URI: http://mojtaba.in
 */
