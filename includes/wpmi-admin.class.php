@@ -85,19 +85,29 @@ class WPMI_Admin
 
         // Settings fields
         add_settings_field(
-            'wpmi_api_key', // ID
-            __('Mailelite API Key', 'wpmi'), // Title
-            array($this, 'api_key_callback'), // Callback
-            'wpmi_general_page', // Page
-            'wpmi_general' // Section
+            'wpmi_api_key',
+            __('Mailelite API Key', 'wpmi'),
+            array($this, 'api_key_callback'),
+            'wpmi_general_page',
+            'wpmi_general' 
         );
         add_settings_field(
-            'wpmi_reg_group', // ID
-            __('Register Users Groups', 'wpmi'), // Title
-            array($this, 'register_group_callback'), // Callback
-            'wpmi_general_page', // Page
-            'wpmi_general' // Section
+            'wpmi_reg_group',
+            __('Register Users Groups', 'wpmi'),
+            array($this, 'register_group_callback'),
+            'wpmi_general_page',
+            'wpmi_general' 
         );
+        if( class_exists('GFForms') ) {
+	        add_settings_field(
+		        'wpmi_gravity_forms',
+		        __('Gravityforms', 'wpmi'),
+		        array($this, 'gravity_forms_callback'),
+		        'wpmi_general_page',
+		        'wpmi_general' 
+	        );
+        }
+
     }
 
     public function api_key_callback()
@@ -129,6 +139,41 @@ class WPMI_Admin
 
     }
 
+    public function gravity_forms_callback()
+    {
+        $api_key = self::get_option('api_key');
+        $options = self::get_option('all');
+        if( isset($api_key) && !empty($api_key) ) {
+	        $forms = GFAPI::get_forms();
+	        if ($forms) {
+		        echo '<select name="wpmi_options[gravity][form_id]" id="register_groups" class="wpmi_select2" data-placeholder="'.__('Select gravity form', 'wpmi').'">';
+		        echo '<option value="" >'.__('Select gravity form', 'wpmi').'</option>';
+			        foreach ($forms as $form) {
+				        $form_id = $form['id'];
+				        $form_title = $form['title'];
+				        $selected = ($form_id == self::get_option('gravity_form_id')) ? ' selected="selected"' : '';
+				        echo '<option value="'.$form_id.'" '. $selected.'>'.$form_title.'</option>';
+			        }
+		        echo '</select>';
+	        }
+
+	        $all_groups = $this->group_api->get();
+	        if ($all_groups) {
+		        echo '<select name="wpmi_options[gravity][group][]" id="register_groups" multiple="multiple" class="wpmi_select2" data-placeholder="'.__('Select groups', 'wpmi').'">';
+		        echo '<option value="" >'.__('Select groups', 'wpmi').'</option>';
+		        foreach ($all_groups as $group) {
+			        $selected = (in_array($group->id, self::get_option('gravity_form_group'))) ? ' selected="selected"' : '';
+			        echo '<option value="'.$group->id.'" '.$selected.'>'.$group->name.' ( '.$group->total.' '.__('User', 'wpmi').')</option>';
+		        }
+		        echo '</select>';
+	        }
+
+        } else {
+            _e('Please insert your api key first.', 'wpmi');
+        }
+
+    }
+
 	public function add_setting_link_meta( $links, $file ) {
 		if ( strpos( $file, 'wp-mailerlite-lite.php' ) !== false ) {
 			$new_links = array(
@@ -146,6 +191,8 @@ class WPMI_Admin
         $options = get_option('wpmi_options');
         $api_key = (isset($options['api_key']) && !empty($options['api_key'])) ? $options['api_key'] : '';
         $register_groups = (isset($options['register_groups']) && !empty($options['register_groups'])) ? $options['register_groups'] : array();
+        $gravity_form_id = (isset($options['gravity']['form_id']) && !empty($options['gravity']['form_id'])) ? $options['gravity']['form_id'] : false;
+        $gravity_form_group = (isset($options['gravity']['group']) && !empty($options['gravity']['group'])) ? $options['gravity']['group'] : array();
 
         switch ($option_name) {
             case 'api_key':
@@ -153,6 +200,12 @@ class WPMI_Admin
                 break;
             case 'register_groups':
                 return $register_groups;
+                break;
+            case 'gravity_form_id':
+                return $gravity_form_id;
+                break;
+            case 'gravity_form_group':
+                return $gravity_form_group;
                 break;
             default:
                 return $options;

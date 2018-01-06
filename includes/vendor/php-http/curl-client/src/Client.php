@@ -278,6 +278,10 @@ class Client implements HttpClient, HttpAsyncClient
             $body = $request->getBody();
             $bodySize = $body->getSize();
             if ($bodySize !== 0) {
+                if ($body->isSeekable()) {
+                    $body->rewind();
+                }
+
                 // Message has non empty body.
                 if (null === $bodySize || $bodySize > 1024 * 1024) {
                     // Avoid full loading large or unknown size body into memory
@@ -317,20 +321,21 @@ class Client implements HttpClient, HttpAsyncClient
     private function createHeaders(RequestInterface $request, array $options)
     {
         $curlHeaders = [];
-        $headers = array_keys($request->getHeaders());
-        foreach ($headers as $name) {
+        $headers = $request->getHeaders();
+        foreach ($headers as $name => $values) {
             $header = strtolower($name);
             if ('expect' === $header) {
                 // curl-client does not support "Expect-Continue", so dropping "expect" headers
                 continue;
             }
             if ('content-length' === $header) {
-                $values = [0];
                 if (array_key_exists(CURLOPT_POSTFIELDS, $options)) {
+                    // Small body content length can be calculated here.
                     $values = [strlen($options[CURLOPT_POSTFIELDS])];
+                } elseif (!array_key_exists(CURLOPT_READFUNCTION, $options)) {
+                    // Else if there is no body, forcing "Content-length" to 0
+                    $values = [0];
                 }
-            } else {
-                $values = $request->getHeader($name);
             }
             foreach ($values as $value) {
                 $curlHeaders[] = $name . ': ' . $value;
@@ -355,7 +360,7 @@ class Client implements HttpClient, HttpAsyncClient
     private function createResponseBuilder()
     {
         try {
-            $body = $this->streamFactory->createStream(fopen('php://temp', 'w+'));
+            $body = $this->streamFactory->createStream(fopen('php://temp', 'w+b'));
         } catch (\InvalidArgumentException $e) {
             throw new \RuntimeException('Can not create "php://temp" stream.');
         }

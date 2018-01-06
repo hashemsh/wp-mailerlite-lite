@@ -71,7 +71,7 @@ abstract class ClassDiscovery
             }
         }
 
-        throw new DiscoveryFailedException('Could not find resource using any discovery strategy', $exceptions);
+        throw DiscoveryFailedException::create($exceptions);
     }
 
     /**
@@ -150,7 +150,7 @@ abstract class ClassDiscovery
     }
 
     /**
-     * Evaulates conditions to boolean.
+     * Evaluates conditions to boolean.
      *
      * @param mixed $condition
      *
@@ -199,9 +199,9 @@ abstract class ClassDiscovery
                 return $class();
             }
         } catch (\Exception $e) {
-            throw new ClassInstantiationFailedException('Unexcepced exception when instantiating class.', 0, $e);
+            throw new ClassInstantiationFailedException('Unexpected exception when instantiating class.', 0, $e);
         }
 
-        throw new ClassInstantiationFailedException('Could not instantiate class becuase parameter is neither a callable nor a string');
+        throw new ClassInstantiationFailedException('Could not instantiate class because parameter is neither a callable nor a string');
     }
 }

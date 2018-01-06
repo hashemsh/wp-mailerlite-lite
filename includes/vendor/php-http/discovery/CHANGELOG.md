@@ -1,5 +1,37 @@
 # Change Log
 
+## 1.3.0 - 2017-08-03
+
+### Added
+
+- Discovery support for CakePHP adapter
+- Discovery support for Zend adapter
+- Discovery support for Artax adapter
+
+## 1.2.1 - 2017-03-02
+
+### Fixed
+
+- Fixed minor issue with `MockClientStrategy`, also added more tests. 
+
+## 1.2.0 - 2017-02-12
+
+### Added
+
+- MockClientStrategy class.
+
+## 1.1.1 - 2016-11-27
+
+### Changed
+
+- Made exception messages clearer. `StrategyUnavailableException` is no longer the previous exception to `DiscoveryFailedException`.
+- `CommonClassesStrategy` is using `self` instead of `static`. Using `static` makes no sense when `CommonClassesStrategy` is final.
+
+## 1.1.0 - 2016-10-20
+
+### Added
+
+- Discovery support for Slim Framework factories
 
 ## 1.0.0 - 2016-07-18
 

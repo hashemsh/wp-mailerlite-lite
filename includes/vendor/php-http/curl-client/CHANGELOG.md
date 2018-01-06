@@ -1,5 +1,29 @@
 # Change Log
 
+## 1.7 - 2017-02-09
+
+### Changed
+
+- #30: Make sure we rewind streams
+
+## 1.6.2 - 2017-01-02
+
+### Fixed
+
+- #29: Request not using CURLOPT_POSTFIELDS have content-length set to 
+
+### Changed
+
+- Use binary mode to create response body stream.
+
+
+## 1.6.1 - 2016-11-11
+
+### Fixed
+
+- #27: ErrorPlugin and sendAsyncRequest() incompatibility
+
+
 ## 1.6 - 2016-09-12
 
 ### Changed
